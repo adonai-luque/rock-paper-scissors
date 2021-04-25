@@ -1,0 +1,99 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: radial-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+  font-family: 'Barlow Semi Condensed', sans-serif;
+}
+
+
+header {
+  padding: 20px;
+  width: 50vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid white;
+  border-radius: 10px;
+}
+
+header .scoreboard {
+  display: flex;
+  width: 10vw;
+  border-radius: 5px;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 99px;
+  background-color: white;
+}
+
+header .score {
+  font-size: 48px;
+  font-weight: 700;
+}
+
+.game {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;  
+  align-items: flex-start;
+  padding: 65px 0;
+  height: 400px;
+  width: 400px;
+}
+
+.game .bg-triangle {
+  position: absolute;
+  margin-top: 40px;
+  height: 200px;
+  width: 200px;
+  pointer-events: none;
+}
+
+.choice {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: yellow;
+  width: 100px;
+  height: 100px;
+  z-index: 1;
+}
+
+.game .rock {
+  align-self: flex-end;
+}
+
+.choice img {
+  pointer-events: none;
+}
+
+.inactive {
+  display: none !important;
+}
+
+.results {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+
+
+
+
+
+
+.attribution { font-size: 11px; text-align: center; }
+
+.attribution a { color: hsl(228, 45%, 44%); }
