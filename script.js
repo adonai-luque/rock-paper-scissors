@@ -45,6 +45,7 @@ function attempt(e) {
 function showPlayer() {
   game.classList.add('inactive');
   playerChoice.innerHTML = document.querySelector(`.${player}`).innerHTML
+  playerChoice.classList.add(player);
   results.classList.remove('inactive');
   computerBoard.addEventListener('click', showComputer)
 }
@@ -57,7 +58,8 @@ function showComputer() {
   computerBoard.removeEventListener('click', showComputer)
   computer = randomChoice(options, player);
   computerChoice.innerHTML = document.querySelector(`.${computer}`).innerHTML;
-  setTimeout(() => results.addEventListener('click', showOutcome), 100);
+  computerChoice.classList.add(computer);
+  setTimeout(() => showOutcome(), 500);
 }
 function showOutcome() {
   results.removeEventListener('click', showOutcome)
@@ -66,8 +68,10 @@ function showOutcome() {
 }
 function clearResults() {
   resultsBoard.classList.add('inactive');
-  playerChoice.innerHTML = ""
-  computerChoice.innerHTML = ""
+  playerChoice.innerHTML = "";
+  playerChoice.classList.remove(player);
+  computerChoice.innerHTML = "";
+  computerChoice.classList.remove(computer);
   outcome.textContent = ""
 }
 function runGame() {
