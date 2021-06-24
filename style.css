@@ -70,6 +70,7 @@ header .score {
   border-radius: 50%;
   width: 200px;
   height: 200px;
+  box-shadow: 0 -8px inset rgba(0,0,0,0.2);
   z-index: 1;
 }
 
@@ -99,6 +100,7 @@ header .score {
   align-items: center;
   width: 160px;
   height: 160px;
+  box-shadow: 0 8px inset rgba(0,0,0,0.2);
   border-radius: 50%;
 }
 
