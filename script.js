@@ -22,8 +22,7 @@ const results = document.querySelector('.results');
 const playAgain = document.querySelector('.play-again');
 const playerBoard = document.querySelector('.player-board');
 const computerBoard = document.querySelector('.computer-board');
-const resultsBoard = document.querySelector('.results-board')
-const emptyChoice = document.querySelector('.empty')
+const outcomeBoard = document.querySelector('.outcome-board')
 const outcome = document.querySelector(".outcome");
 let player;
 let computer;
@@ -46,6 +45,7 @@ function showPlayer() {
   game.classList.add('inactive');
   playerChoice.innerHTML = document.querySelector(`.${player}`).innerHTML
   playerChoice.classList.add(player);
+  playerChoice.classList.add('large-choice');
   results.classList.remove('inactive');
   computerBoard.addEventListener('click', showComputer)
 }
@@ -58,26 +58,32 @@ function showComputer() {
   computer = randomChoice(options);
   computerChoice.innerHTML = document.querySelector(`.${computer}`).innerHTML;
   computerChoice.classList.add(computer);
+  computerChoice.classList.remove('empty-choice');
+  computerChoice.classList.add('large-choice');
   outcome.textContent = result(player, computer);
   setTimeout(() => showOutcome(), 500);
 }
 function result(player, computer) {
-  if (player === computer) return "TIE";
+  if (player === computer) return "IT'S A TIE";
   return resultGuide[player][computer] ? "YOU WIN" : "YOU LOSE";
 }
 function showOutcome() {
   results.removeEventListener('click', showOutcome)
-  resultsBoard.classList.remove('inactive');
+  outcomeBoard.classList.remove('inactive');
 }
 function clearResults() {
-  resultsBoard.classList.add('inactive');
+  outcomeBoard.classList.add('inactive');
   playerChoice.innerHTML = "";
   playerChoice.classList.remove(player);
+  playerChoice.classList.remove('large-choice');
   computerChoice.innerHTML = "";
   computerChoice.classList.remove(computer);
+  computerChoice.classList.add('empty-choice');
+  computerChoice.classList.remove('large-choice');
   outcome.textContent = ""
 }
 function runGame() {
+  console.log('runGame');
   clearResults();
   game.classList.remove('inactive');
   results.classList.add('inactive');
