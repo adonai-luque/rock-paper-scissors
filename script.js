@@ -1,5 +1,5 @@
 // Useful variables
-const result = {
+const resultGuide = {
   'rock': {
     'paper': false,
     'scissors': true
@@ -45,29 +45,36 @@ function attempt(e) {
 function showPlayer() {
   game.classList.add('inactive');
   playerChoice.innerHTML = document.querySelector(`.${player}`).innerHTML
+  playerChoice.classList.add(player);
   results.classList.remove('inactive');
   computerBoard.addEventListener('click', showComputer)
 }
-function randomChoice(options, player) {
-  let newOptions = options.filter(o =>  o !== player )
-  let index = Math.floor(Math.random() * newOptions.length);
-  return newOptions[index];
+function randomChoice(options) {
+  let index = Math.floor(Math.random() * options.length);
+  return options[index];
 }
 function showComputer() {
   computerBoard.removeEventListener('click', showComputer)
-  computer = randomChoice(options, player);
+  computer = randomChoice(options);
   computerChoice.innerHTML = document.querySelector(`.${computer}`).innerHTML;
-  setTimeout(() => results.addEventListener('click', showOutcome), 100);
+  computerChoice.classList.add(computer);
+  outcome.textContent = result(player, computer);
+  setTimeout(() => showOutcome(), 500);
+}
+function result(player, computer) {
+  if (player === computer) return "TIE";
+  return resultGuide[player][computer] ? "YOU WIN" : "YOU LOSE";
 }
 function showOutcome() {
   results.removeEventListener('click', showOutcome)
-  outcome.textContent = result[player][computer] ? "YOU WIN" : "YOU LOSE";
   resultsBoard.classList.remove('inactive');
 }
 function clearResults() {
   resultsBoard.classList.add('inactive');
-  playerChoice.innerHTML = ""
-  computerChoice.innerHTML = ""
+  playerChoice.innerHTML = "";
+  playerChoice.classList.remove(player);
+  computerChoice.innerHTML = "";
+  computerChoice.classList.remove(computer);
   outcome.textContent = ""
 }
 function runGame() {
