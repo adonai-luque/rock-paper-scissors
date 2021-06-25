@@ -64,18 +64,18 @@
     Coded with <span class="heart">&#10084;</span> by <a href="https://github.com/adonai-luque/">Adonai Luque</a>.
   </div>
 
-  <div class="overlay"></div>
+  <div class="overlay inactive"></div>
 
-  <div class="rules-modal">
+  <div class="rules-modal inactive">
     <div class="rules-header">
       <h3>RULES</h3>
-      <button class="close-button">&times;</button>
+      <button class="close-button" onclick="closeModal()">&times;</button>
     </div>
     <div class="rules-content">
       <img src="./images/image-rules.svg" alt="Rules diagram">
     </div>
   </div>
-
+  <button class="rules-button" onclick="openModal()">RULES</button>
   <script src="script.js"></script>
 </body>
 </html>

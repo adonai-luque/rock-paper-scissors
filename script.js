@@ -29,6 +29,10 @@ let computer;
 let playerChoice = document.querySelector('.player');
 let computerChoice = document.querySelector('.computer');
 
+let rulesModal = document.querySelector('.rules-modal');
+let overlay = document.querySelector('.overlay');
+
+
 // Event listeners
 game.addEventListener('click', attempt);
 playAgain.addEventListener('click', runGame)
@@ -90,7 +94,15 @@ function runGame() {
 }
 
 
+function openModal() {
+  rulesModal.classList.remove('inactive');
+  overlay.classList.remove('inactive');
+}
 
+function closeModal() {
+  rulesModal.classList.add('inactive');
+  overlay.classList.add('inactive');
+}
 
 
 

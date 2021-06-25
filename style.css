@@ -63,10 +63,10 @@ header .scoreboard {
 }
 
 .game h2 {
-  margin: 0 auto;
-  color: rgba(255, 255, 255, 0.5);
-  font-size: 28px;
-  font-weight: 400;
+  margin: 0 auto 20px auto;
+  color: hsl(217, 16%, 45%);
+  font-size: 32px;
+  font-weight: 500;
 }
 
 .choices {
@@ -193,11 +193,26 @@ header .scoreboard {
 }
 
 .attribution span {
-  color: rgba(255, 0, 0, 0.5)
+  color: rgba(255, 0, 0, 0.5);
 }
 
 .attribution a {
   color: hsl(228, 45%, 44%);
+}
+
+.rules-button {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  width: 140px;
+  height: 45px;
+  border: 2px solid hsl(217, 16%, 45%);
+  background: none;
+  border-radius: 5px;
+  color: hsl(217, 16%, 45%);
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
 }
 
 .rules-modal {
@@ -245,4 +260,14 @@ header .scoreboard {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2;
 }
