@@ -50,12 +50,12 @@ header .scoreboard {
 
 .reset {
   margin-left: 10px;
-  font-family: inherit;
   background: none;
   border: none;
-  font-size: 20px;
+  font-size: 22px;
+  font-weight: bolder;
   line-height: 22px;
-  font-weight: 800;
+  color: hsl(229, 25%, 31%);
   cursor: pointer;
 }
 
@@ -266,7 +266,7 @@ header .scoreboard {
   height: 45px;
   border: 2px solid rgba(255, 255, 255, 0.5);
   background: none;
-  border-radius: 5px;
+  border-radius: 10px;
   color: rgba(255, 255, 255, 0.5);
   cursor: pointer;
   font-size: 16px;
