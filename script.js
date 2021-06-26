@@ -89,7 +89,6 @@ function updateScore() {
 }
 
 function showOutcome() {
-  console.log('showOutcome');
   winnerChoice = whoWon();
   winnerChoice && winnerChoice.classList.add('winner');
   outcome.textContent = result(player, computer);
