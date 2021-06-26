@@ -42,7 +42,24 @@ header .scoreboard {
   background-color: white;
 }
 
-.scoreboard h2 {
+.scoreboard-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.reset {
+  margin-left: 10px;
+  font-family: inherit;
+  background: none;
+  border: none;
+  font-size: 20px;
+  line-height: 22px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.scoreboard-title h2 {
   color: hsl(229, 25%, 31%);
   font-size: 20px;
   line-height: 22px;
@@ -199,6 +216,7 @@ header .scoreboard {
 }
 
 .large-choice {
+  cursor: initial;
   transform: scale(1.5);
 }
 

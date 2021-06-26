@@ -17,7 +17,7 @@ const options = ['rock', 'paper', 'scissors'];
 let player;
 let computer;
 let winner;
-let score = (localStorage.score && 0)
+let storedScore = localStorage.score ? localStorage.score : 0
 
 // Media queries
 const body = document.querySelector('body');
@@ -28,6 +28,7 @@ const playerBoard = document.querySelector('.player-board');
 const computerBoard = document.querySelector('.computer-board');
 const outcomeBoard = document.querySelector('.outcome-board')
 const outcome = document.querySelector(".outcome");
+const score = document.querySelector(".score");
 let playerChoice = document.querySelector('.player');
 let computerChoice = document.querySelector('.computer');
 let rulesModal = document.querySelector('.rules-modal');
@@ -46,13 +47,15 @@ function attempt(e) {
   }
 }
 
+updateScore()
+
 function showPlayer() {
   game.classList.add('inactive');
   playerChoice.innerHTML = document.querySelector(`.${player}`).innerHTML
   playerChoice.classList.add(player);
   playerChoice.classList.add('large-choice');
   results.classList.remove('inactive');
-  computerBoard.addEventListener('click', showComputer)
+  computerChoice.addEventListener('click', showComputer)
 }
 
 function randomChoice(options) {
@@ -71,7 +74,7 @@ function whoWon() {
 }
 
 function showComputer() {
-  computerBoard.removeEventListener('click', showComputer)
+  computerChoice.removeEventListener('click', showComputer)
   computer = randomChoice(options);
   computerChoice.innerHTML = document.querySelector(`.${computer}`).innerHTML;
   computerChoice.classList.add(computer);
@@ -80,11 +83,19 @@ function showComputer() {
   showOutcome();
 }
 
+function updateScore() {
+  score.textContent = storedScore.toString();
+  localStorage.score = storedScore;
+}
+
 function showOutcome() {
-  winnerChoice =  whoWon()
+  console.log('showOutcome');
+  winnerChoice = whoWon();
   winnerChoice && winnerChoice.classList.add('winner');
   outcome.textContent = result(player, computer);
-  results.removeEventListener('click', showOutcome)
+  if (outcome.textContent === "YOU WIN!") storedScore += 1;
+  if (outcome.textContent === "YOU LOSE!") storedScore += -1;
+  updateScore()
   outcomeBoard.classList.remove('inactive');
 }
 
@@ -118,7 +129,10 @@ function closeModal() {
   overlay.classList.add('inactive');
 }
 
-
+function resetScore() {
+  storedScore = 0;
+  updateScore();
+}
 
 
 
