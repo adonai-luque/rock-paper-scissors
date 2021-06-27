@@ -400,7 +400,7 @@ header .scoreboard {
   }
 
   .choices {
-    margin: 4.5vh 4.5vh 3.5vh 4.5vh;
+    margin: 4.5vh 4.5vh 1vh 4.5vh;
     display: grid;
     grid-template-columns: repeat(10, 4.5vh);
     grid-template-rows: repeat(10, 4.5vh);
@@ -561,9 +561,7 @@ header .scoreboard {
   }
 
   .attribution {
-    position: fixed;
     width: 90%;
-    bottom: 4vh;
     font-size: 2vh;
     text-align: center;
     color: rgba(255, 255, 255, 0.5);
@@ -643,7 +641,7 @@ header .scoreboard {
   }
 }
 
-@media (orientation: landscape) and (max-width: 1023) {
+@media (orientation: landscape) and (max-width: 1365) {
   .attribution {
     display: none;
   }
