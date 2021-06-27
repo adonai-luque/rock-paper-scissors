@@ -185,10 +185,11 @@ header .scoreboard {
 .result-board {
   display: flex;
   height: 80%;
+  width: 300px;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  margin: 0 min(5%, 60px);
+  margin: 0;
 }
 
 .outcome-board {
@@ -197,7 +198,7 @@ header .scoreboard {
 }
 
 .outcome-board h2 {
-  font-size: 54px;
+  font-size: 48px;
 }
 
 .play-again {
@@ -490,7 +491,7 @@ header .scoreboard {
   .results h2 {
     margin: 0 auto 10vh auto;
     color: rgba(255, 255, 255, 0.7);
-    font-size: 2.5vh;
+    font-size: 2.2vh;
     font-weight: 500;
     letter-spacing: 0.1vh;
   }
