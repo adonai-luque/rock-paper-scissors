@@ -571,14 +571,14 @@ header .scoreboard {
 
   .rules-button {
     position: initial;
-    width: 130px;
-    height: 40px;
-    border: 2px solid rgba(255, 255, 255, 0.5);
+    width: 18vh;
+    height: 6vh;
+    border: 0.4vh solid rgba(255, 255, 255, 0.5);
     background: none;
-    border-radius: 10px;
+    border-radius: 1vh;
     color: rgba(255, 255, 255, 0.5);
     cursor: pointer;
-    font-size: 14px;
+    font-size: 2vh;
     font-weight: 600;
     letter-spacing: 1px;
   }
@@ -635,6 +635,7 @@ header .scoreboard {
 
   .rules-content img {
     width: 50vh;
+    min-width: 250px;
   }
 
   .overlay {
@@ -642,7 +643,7 @@ header .scoreboard {
   }
 }
 
-@media (orientation: landscape) and (max-width: 767.98px) {
+@media (orientation: landscape) and (max-width: 1023) {
   .attribution {
     display: none;
   }
