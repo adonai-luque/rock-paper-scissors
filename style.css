@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@400;500;600;700;800;900&display=swap');
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -279,8 +281,8 @@ header .scoreboard {
   background-color: #fff;
   top: 50%;
   left: 50%;
-  height: 420px;
-  width: 420px;
+  height: 500px;
+  width: 500px;
   transform: translate(-50%, -50%);
   border-radius: 10px;
   display: flex;
@@ -291,7 +293,7 @@ header .scoreboard {
 
 .rules-header {
   width: 100%;
-  margin: 20px 0;
+  margin-top: 15px;
   padding: 0 30px;
   display: flex;
   flex-direction: row;
@@ -300,7 +302,7 @@ header .scoreboard {
 }
 
 .rules-header h3 {
-  font-size: 30px;
+  font-size: 36px;
   color: rgba(0, 0, 0, 0.7);
 }
 
@@ -308,17 +310,22 @@ header .scoreboard {
   cursor: pointer;
   border: none;
   background: none;
-  font-size: 36px;
+  padding-top: 0px;
+  font-size: 48px;
   font-weight: 500;
-  color: rgba(0, 0, 0, 0.3);
+  color: rgba(0, 0, 0, 0.7);
 }
 
 .rules-content {
   width: 100%;
-  margin: 20px 0;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.rules-content img {
+  width: 85%;
 }
 
 .overlay {

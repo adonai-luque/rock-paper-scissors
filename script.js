@@ -17,7 +17,8 @@ const options = ['rock', 'paper', 'scissors'];
 let player;
 let computer;
 let winner;
-let storedScore = localStorage.score ? localStorage.score : 0
+let storedScore = localStorage.score ? parseInt(localStorage.score) : 0
+
 
 // Media queries
 const body = document.querySelector('body');
@@ -39,6 +40,9 @@ game.addEventListener('click', attempt);
 playAgain.addEventListener('click', runGame)
 
 
+// Initial executions
+score.textContent =storedScore.toString()
+
 // Functions
 function attempt(e) {
   if (e.target.classList[0] === 'choice') {
@@ -46,8 +50,6 @@ function attempt(e) {
     showPlayer();
   }
 }
-
-updateScore()
 
 function showPlayer() {
   game.classList.add('inactive');
@@ -132,6 +134,3 @@ function resetScore() {
   storedScore = 0;
   updateScore();
 }
-
-
-
