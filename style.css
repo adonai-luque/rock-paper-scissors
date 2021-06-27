@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@400;500;600;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@400;500;600;700;800;900&display=swap");
 
 * {
   box-sizing: border-box;
@@ -55,7 +55,7 @@ header .scoreboard {
   background: none;
   border: none;
   font-size: 22px;
-  font-weight: bolder;
+  font-weight: bold;
   line-height: 22px;
   color: hsl(229, 25%, 31%);
   cursor: pointer;
@@ -336,4 +336,306 @@ header .scoreboard {
   left: 0;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 2;
+}
+
+/* Small devices */
+@media (max-width: 767.98px) {
+  header {
+    margin: 30px 0 30px 0;
+    padding: 0 10px;
+    width: 85%;
+    height: 100px;
+    border: 2px solid hsl(217, 16%, 45%);
+    border-radius: 8px;
+  }
+
+  header .logo {
+    margin-top: 4px;
+  }
+
+  .logo img {
+    height: 60px;
+  }
+
+  header .scoreboard {
+    width: 90px;
+    border-radius: 5px;
+    height: 75px;
+  }
+
+  .reset {
+    margin-left: 5px;
+    background: none;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 16px;
+  }
+
+  .scoreboard-title h2 {
+    font-size: 16px;
+    line-height: 16px;
+    letter-spacing: 1px;
+  }
+
+  .scoreboard .score {
+    font-size: 48px;
+    line-height: 44px;
+    font-weight: 700;
+    color: hsl(229, 25%, 31%);
+  }
+
+  .game {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .game h2 {
+    margin: 0 auto 10px auto;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 24px;
+    font-weight: 500;
+  }
+
+  .choices {
+    margin: 40px 30px 30px 30px;
+    display: grid;
+    grid-template-columns: repeat(10, 30px);
+    grid-template-rows: repeat(10, 30px);
+    height: 300px;
+    width: 300px;
+  }
+
+  .choices .bg-triangle {
+    grid-column: 3/7;
+    grid-row: 3/7;
+    width: 180px;
+    pointer-events: none;
+    transform: scale(1.1);
+    z-index: 0;
+
+  }
+
+  .choice {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    box-shadow: 0 -5px inset rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    cursor: pointer;
+  }
+
+  .rock {
+    grid-column: 4/7;
+    grid-row: 6/9;
+    background: radial-gradient(
+      hsl(349, 71%, 52%),
+      hsl(349, 70%, 56%)
+    ) !important;
+  }
+
+  .paper {
+    grid-column: 1/4;
+    grid-row: 1/4;
+    background: radial-gradient(
+      hsl(230, 89%, 62%),
+      hsl(230, 89%, 65%)
+    ) !important;
+  }
+
+  .scissors {
+    grid-column: 7/10;
+    grid-row: 1/4;
+    background: radial-gradient(
+      hsl(39, 89%, 49%),
+      hsl(40, 84%, 53%)
+    ) !important;
+  }
+
+  .choice .icon {
+    pointer-events: none;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 96px;
+    height: 96px;
+    box-shadow: 0 5px inset rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+  }
+
+  .paper img,
+  .scissors img {
+    height: 51px;
+  }
+
+  .rock img {
+    height: 42px;
+  }
+
+  .results {
+    display: flex;
+    width: 100%;
+    margin-top: -30px;
+    margin-bottom: 200px;
+    height: 400px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .results h2 {
+    margin: 0 auto 20px auto;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 26px;
+    font-weight: 500;
+    letter-spacing: 2px;
+  }
+
+  .result-board {
+    display: flex;
+    height: 80%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 min(5%, 60px);
+  }
+
+  .outcome-board {
+    height: 50%;
+    justify-content: center;
+  }
+
+  .outcome-board h2 {
+    font-size: 54px;
+  }
+
+  .play-again {
+    width: 220px;
+    height: 50px;
+    font-family: inherit;
+    font-size: 20px;
+    letter-spacing: 2px;
+    font-weight: 700;
+    color: hsl(229, 25%, 31%);
+    border-radius: 10px;
+    border: none;
+  }
+
+  .play-again:hover {
+    cursor: pointer;
+    color: hsl(349, 71%, 52%);
+  }
+
+  .large-choice {
+    cursor: initial;
+    transform: scale(1.5);
+  }
+
+  .empty-choice {
+    background: hsl(237, 49%, 15%);
+    box-shadow: none;
+  }
+
+  .empty-choice h3 {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  .winner {
+    box-shadow: 0px 0px 0px 30px rgba(255, 255, 255, 0.03),
+      0px 0px 0px 60px rgba(255, 255, 255, 0.02),
+      0px 0px 0px 90px rgba(255, 255, 255, 0.01);
+    z-index: -1;
+  }
+
+  .inactive {
+    display: none !important;
+  }
+
+  .attribution {
+    position: fixed;
+    width: 90%;
+    bottom: 30px;
+    font-size: 16px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  .rules-button {
+    position: initial;
+    width: 130px;
+    height: 40px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    background: none;
+    border-radius: 10px;
+    color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+
+  .rules-modal {
+    position: fixed;
+    background-color: #fff;
+    top: 50%;
+    left: 50%;
+    height: 100vh;
+    width: 100vw;
+    transform: translate(-50%, -50%);
+    border-radius: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 3;
+  }
+
+  .rules-header {
+    width: 100%;
+    margin-top: 60px;
+    padding: 0 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .rules-header h3 {
+    font-size: 36px;
+    color: rgba(0, 0, 0, 0.7);
+  }
+
+  .rules-header .close-button {
+    position: fixed;
+    cursor: pointer;
+    border: none;
+    background: none;
+    padding-top: 0px;
+    bottom: 25px;
+    font-size: 48px;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.7);
+  }
+
+  .rules-content {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .rules-content img {
+    width: 90%;
+  }
+
+  .overlay {
+    display: none;
+  }
 }
