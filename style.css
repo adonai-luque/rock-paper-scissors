@@ -600,8 +600,8 @@ header .scoreboard {
 
   .rules-header {
     width: 100%;
-    margin-top: 60px;
-    padding: 0 30px;
+    margin-top: 8vh;
+    padding: 0 4vh;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -609,7 +609,7 @@ header .scoreboard {
   }
 
   .rules-header h3 {
-    font-size: 36px;
+    font-size: 4vh;
     color: rgba(0, 0, 0, 0.7);
   }
 
@@ -619,8 +619,8 @@ header .scoreboard {
     border: none;
     background: none;
     padding-top: 0px;
-    bottom: 25px;
-    font-size: 48px;
+    bottom: 3vh;
+    font-size: 6vh;
     font-weight: 500;
     color: rgba(0, 0, 0, 0.7);
   }
@@ -634,7 +634,7 @@ header .scoreboard {
   }
 
   .rules-content img {
-    width: 90%;
+    width: 50vh;
   }
 
   .overlay {
